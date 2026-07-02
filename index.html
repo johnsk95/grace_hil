@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>GRACE claim verification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header id="topbar">
+    <div class="topbar-left">
+      <strong id="study-name">GRACE claim verification</strong>
+      <span id="validator-tag" class="muted"></span>
+    </div>
+    <div class="topbar-right">
+      <span id="progress-text" class="muted">0 / 0</span>
+      <span id="sync-dot" class="sync" title="sync status">•</span>
+    </div>
+  </header>
+  <div id="progress-bar"><div id="progress-fill"></div></div>
+
+  <!-- Intro / instructions gate -->
+  <main id="intro" class="screen">
+    <div class="card">
+      <h1>Verify claims against a passage</h1>
+      <p>
+        You will see a short <strong>passage</strong> and a single
+        <strong>claim</strong>. Decide whether the passage
+        <strong>supports</strong> the claim.
+      </p>
+      <ul>
+        <li><strong>Confirm</strong> — the passage directly supports the claim.</li>
+        <li><strong>Reject</strong> — the claim is not supported / contradicts the passage.</li>
+        <li><strong>Unsure</strong> — you genuinely cannot tell from the passage.</li>
+      </ul>
+      <p class="muted">
+        Judge only from the passage shown, not outside knowledge. Keyboard:
+        <kbd>C</kbd> confirm, <kbd>R</kbd> reject, <kbd>U</kbd> unsure,
+        <kbd>&uarr;</kbd>/<kbd>&darr;</kbd> scroll. The first few items marked
+        <span class="calib-chip">★ calibration</span> are shared warm-ups.
+      </p>
+      <p id="resume-note" class="muted hidden"></p>
+      <button id="start-btn" class="primary">Start</button>
+      <p class="muted small">Your progress is saved automatically on this device.</p>
+    </div>
+  </main>
+
+  <!-- Annotation screen -->
+  <main id="annotate" class="screen hidden">
+    <section id="context-pane">
+      <div class="pane-label">SOURCE PASSAGE <span id="calib-badge" class="calib-chip hidden">★ calibration</span></div>
+      <div id="context-text" tabindex="0"></div>
+    </section>
+
+    <section id="claim-pane">
+      <div class="pane-label">CLAIM TO VERIFY</div>
+      <div id="claim-text"></div>
+      <div id="meta-row" class="muted small"></div>
+    </section>
+
+    <nav id="actions">
+      <button id="btn-confirm" class="confirm">Confirm <kbd>C</kbd></button>
+      <button id="btn-reject" class="reject">Reject <kbd>R</kbd></button>
+      <button id="btn-unsure" class="unsure">Unsure <kbd>U</kbd></button>
+    </nav>
+
+    <nav id="claimnav">
+      <button id="btn-prev" class="navbtn" title="Previous claim (←)">&lsaquo; Prev</button>
+      <span id="position" class="muted small"></span>
+      <button id="btn-next" class="navbtn" title="Next claim (→)">Next &rsaquo;</button>
+    </nav>
+  </main>
+
+  <!-- Done screen -->
+  <main id="done" class="screen hidden">
+    <div class="card">
+      <h1>All done — thank you.</h1>
+      <p id="done-summary" class="muted"></p>
+      <p class="muted">Your labels have been submitted. You can also download a
+        backup copy for your records:</p>
+      <button id="download-btn">Download my labels (.jsonl)</button>
+      <button id="review-btn">Review / revise my answers</button>
+      <p id="resync-note" class="muted small"></p>
+    </div>
+  </main>
+
+  <!-- Persistent manual-export escape hatch (bottom-left, always available) -->
+  <button id="floating-export" title="Download my labels" class="hidden">⭳ labels</button>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
