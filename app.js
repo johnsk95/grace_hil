@@ -124,7 +124,7 @@
     progText: $("progress-text"), progFill: $("progress-fill"), syncDot: $("sync-dot"),
     intro: $("intro"), annotate: $("annotate"), done: $("done"),
     resumeNote: $("resume-note"), startBtn: $("start-btn"),
-    ctx: $("context-text"), claim: $("claim-text"), meta: $("meta-row"),
+    ctx: $("context-text"), claim: $("claim-text"),
     calibBadge: $("calib-badge"),
     btnConfirm: $("btn-confirm"), btnReject: $("btn-reject"), btnUnsure: $("btn-unsure"),
     btnPrev: $("btn-prev"), btnNext: $("btn-next"), position: $("position"),
@@ -235,10 +235,6 @@
     el.ctx.textContent = rec.source_chunk_text || "(no passage)";
     el.ctx.scrollTop = 0;
     el.claim.textContent = rec.claim_text || "(no claim text)";
-    var bits = [];
-    if (rec.cc_score != null) bits.push("CC " + Number(rec.cc_score).toFixed(3));
-    if (rec.priority_score != null) bits.push("Priority " + Number(rec.priority_score).toFixed(3));
-    el.meta.textContent = bits.join("  ·  ");
     el.calibBadge.classList.toggle("hidden", !rec.is_calibration);
 
     // Reflect any existing decision for this claim (revision support).
