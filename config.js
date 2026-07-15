@@ -18,7 +18,7 @@ window.GRACE_CONFIG = {
   // The server hands each validator a unique dense seat (0,1,2,...); the client
   // turns that seat into a claim subset with the partition below. Set this to
   // the number of validators you actually recruit for exact coverage.
-  N_VALIDATORS_EXPECTED: 6,
+  N_VALIDATORS_EXPECTED: 10,
   // Each "overlap" claim is labeled by this many validators (for agreement).
   OVERLAP_K: 2,
   // Fraction of non-calibration claims placed in the overlap block; the rest are
