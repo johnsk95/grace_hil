@@ -6,7 +6,7 @@
 // auto-collected to the Sheet, and every validator sees the whole pool.
 window.GRACE_CONFIG = {
   // e.g. "https://script.google.com/macros/s/AKfy.../exec"
-  APPS_SCRIPT_URL: "",
+  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwZM5xjgiSvUfZ3kh-_W5hGjZh-FnQPXxNYXVsWog638tcMHA4YRAXqLVnauXMFXg/exec",
 
   // Optional study label shown in the header.
   STUDY_NAME: "GRACE claim verification",
